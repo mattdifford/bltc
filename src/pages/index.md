@@ -1,6 +1,7 @@
 ---
 templateKey: index-page
 title: Bridgwater Lawn Tennis Club
+image: /img/uploads/003.jpg
 heading: Situated just off of J24 of the M5, Bridgwater Lawn Tennis Club offers something for tennis players of all ages and levels.
 subheading: A welcoming club catering for all standards of players
 description: a

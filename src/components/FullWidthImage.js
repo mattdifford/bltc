@@ -2,17 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-import imageLibrary from "../data/header-images.yml";
-
 export default function FullWidthImage(props) {
   const {
     height = "60vh",
+    img,
     title,
     subheading,
     imgPosition = "top left",
   } = props;
-  const num = Math.floor(Math.random() * imageLibrary.images.length);
-  const img = "/img/uploads/"+Object.values(imageLibrary.images)[num].name;
 
   return (
     <React.Fragment>
@@ -39,7 +36,7 @@ export default function FullWidthImage(props) {
           />
         ) : (
           <GatsbyImage
-            src={img}
+            image={img}
             objectFit={"cover"}
             objectPosition={imgPosition}
             style={{
@@ -94,18 +91,3 @@ FullWidthImage.propTypes = {
   height: PropTypes.number,
   subheading: PropTypes.string,
 };
-
-
-export const query = graphql`
-    {
-        coverImage: headerImages{
-            name {
-                childImageSharp {
-                    gatsbyImageData(
-                        width: 1920
-                    )
-                }
-            }
-        }
-    }
-`
