@@ -18,7 +18,7 @@ module.exports = {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: "gatsby-source-filesystem",
       options: {
-        path: `${__dirname}/static/img`,
+        path: `${__dirname}/static/img/uploads`,
         name: "uploads",
       },
     },
@@ -34,6 +34,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: "images",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content`,
+        name: "data",
       },
     },
     `gatsby-plugin-image`,
@@ -60,6 +67,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-remote-images`,
+      options: {
+        filter: node => node.internal.type === `HeaderImagesYaml`,
       },
     },
     {
