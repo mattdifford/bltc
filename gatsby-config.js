@@ -69,13 +69,13 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-yaml`,
-    {
-      resolve: `gatsby-source-remote-images`,
-      options: {
-        filter: node => node.internal.type === `HeaderImagesYaml`,
-      },
-    },
+    // `gatsby-transformer-yaml`,
+    // {
+    //   resolve: `gatsby-source-remote-images`,
+    //   options: {
+    //     filter: node => node.internal.type === `HeaderImagesYaml`,
+    //   },
+    // },
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
